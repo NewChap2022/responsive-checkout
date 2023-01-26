@@ -1,0 +1,40 @@
+.cart-closed {
+    position: fixed;
+    cursor: pointer;
+    bottom: 2%;
+    right: 2%;
+}
+
+#cart-img {
+    width: 50px;
+}
+
+.cart {
+    position: fixed;
+    top: 20%;
+    right: 5%;
+    min-width: 20%;
+    max-width: 50%;
+    max-height: 60%;
+    background-color: white;
+    overflow: auto;
+    padding: .5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
+    border-bottom-left-radius: .5rem;
+}
+
+.cart .close {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    background-color: #630e7a;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+.cart h2 {
+    margin-top: 30px;
+}

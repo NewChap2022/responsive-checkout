@@ -1,0 +1,11 @@
+#cart-button {
+    color: white;
+    background-color: black;
+    margin-left: 10px;
+}
+
+#cart-button:hover {
+    color: white;
+    background-color: gray;
+    border-radius: 10px;
+}
