@@ -61,7 +61,7 @@ export default function Cart({products}) {
                         <CartItem key={item.id} item={item} />
                     ))}
 
-                    <div className="flex-row space-between">
+                    <div style={{display: "flex", justifyContent: "space-between", marginTop: "5px"}}>
                         <strong>Total: ${calculateTotal()}</strong>
 
                         <button>Checkout</button>

@@ -58,7 +58,7 @@ function App() {
     <div>
       <Router>
         <Provider store={store}>
-          <Header />
+          <Header categories={categories}/>
           <Routes>
             <Route
               path="/"
