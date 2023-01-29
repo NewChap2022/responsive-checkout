@@ -4,6 +4,7 @@ import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { removeItem, updateItem } from '../../utils/helpers';
 
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 
 import './style.css';
 
@@ -37,14 +38,15 @@ export default function CartItem({ item }) {
     }
 
     return (
-        <Box sx={{ display: "flex", alignItems: "center" }}>
+        <Box sx={{ display: "flex", alignItems: "center", flexWrap: "wrap" }}>
             <Box>
                 <img className="product-image" src={item.image} alt="product" />
             </Box>
-            <Box sx={{ marginX: "5px" }}>
-                {item.name}, ${item.price}
+            <Box sx={{ margin: "0 5px 0 10px", minWidth: "150px", display: "flex", alignItems: "center"}}>
+                <Box>{item.name}</Box> 
+                <Box sx={{marginLeft: "5px"}}>${item.price}</Box>
             </Box>
-            <Box sx={{ display: "flex", marginX: "5px" }}>
+            <Box sx={{ display: "flex", marginX: "5px", marginY: "2px", alignItems: "center" }}>
                 <Box>
                     <span>Qty:</span>
                     <input

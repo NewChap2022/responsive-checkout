@@ -25,3 +25,8 @@ export function removeItem(item) {
     });
     localStorage.setItem('cart', JSON.stringify(cart));
 }
+
+export function clearCart() {
+    const cart = []
+    localStorage.setItem('cart', JSON.stringify(cart))
+}

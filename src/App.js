@@ -1,13 +1,12 @@
 import * as React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 
 import Home from './pages/Home';
 import Detail from './pages/Detail';
 import NoMatch from './pages/NoMatch';
+import Checkout from './pages/Checkout';
 
 import Header from './components/Header';
-import Cart from './components/Cart';
 import { Provider } from 'react-redux';
 import { store } from './utils/store';
 
@@ -15,7 +14,8 @@ import oreo from './assets/images/oreo.jpg';
 import loungeChair from './assets/images/lounge-chair.jpg';
 import lostAndFound from './assets/images/lost-and-found.jpg';
 import tShirt from './assets/images/t-shirt.jpg';
-import { UPDATE_PRODUCTS } from './utils/actions';
+
+import './App.css';
 
 const categories = ["food", "furniture", "book", "clothes"]
 const products = [
@@ -66,14 +66,17 @@ function App() {
             />
             <Route
               path="/products/:id"
-              element={<Detail />}
+              element={<Detail products={products}/>}
+            />
+            <Route
+              path="/checkout"
+              element={<Checkout />}
             />
             <Route
               path="*"
               element={<NoMatch />}
             />
           </Routes>
-          <Cart products={products}/>
         </Provider>
       </Router>
     </div>

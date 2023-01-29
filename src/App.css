@@ -24,6 +24,7 @@
   color: white;
 }
 
+
 .App-link {
   color: #61dafb;
 }
@@ -35,4 +36,23 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.cart-button {
+  color: white;
+  background-color: black;
+  margin-left: 10px;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: .5s
+}
+
+.cart-button:hover {
+  color: black;
+  background-color: darkgray;
+  border-radius: 10px;
+  box-shadow: 2px 1px 4px 0px;
+  font-style: italic;
 }
