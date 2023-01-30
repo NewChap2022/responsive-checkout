@@ -25,7 +25,8 @@ const products = [
     category: "food",
     description: "Oreo is a brand of sandwich cookie consisting of two biscuits or cookie pieces with a sweet creme filling.",
     price: 3.79,
-    image: oreo
+    image: oreo,
+    stock: 10
   },
   {
     id: 2,
@@ -33,7 +34,8 @@ const products = [
     category: "furniture",
     description: "A lounge chair that screams “easy street” in every sense.",
     price: 499,
-    image: loungeChair
+    image: loungeChair,
+    stock: 8
   },
   {
     id: 3,
@@ -41,7 +43,8 @@ const products = [
     category: "book",
     description: "What is a boy to do when a lost penguin shows up at his door?",
     price: 24.95,
-    image: lostAndFound
+    image: lostAndFound,
+    stock: 20
   },
   {
     id: 4,
@@ -49,7 +52,8 @@ const products = [
     category: "clothes",
     description: "Super soft crew neck short sleeve tee. Cute Mickey Mouse on front",
     price: 48,
-    image: tShirt
+    image: tShirt,
+    stock: 5
   }
 ]
 
@@ -70,7 +74,7 @@ function App() {
             />
             <Route
               path="/checkout"
-              element={<Checkout />}
+              element={<Checkout products={products}/>}
             />
             <Route
               path="*"

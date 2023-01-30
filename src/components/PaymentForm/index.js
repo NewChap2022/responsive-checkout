@@ -7,7 +7,6 @@ import TextField from "@mui/material/TextField";
 // import Checkbox from "@material-ui/core/Checkbox";
 
 export default function PaymentForm({ payment }) {
-    console.log(payment)
     return (
         <Box>
             <Typography variant="h6" gutterBottom>

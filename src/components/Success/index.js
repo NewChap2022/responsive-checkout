@@ -1,17 +1,8 @@
 import * as React from 'react';
-import { useDispatch } from 'react-redux';
-import { CLEAR_CART } from '../../utils/actions';
-import { clearCart } from '../../utils/helpers';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
-export default function Success() {
-    const dispatch = useDispatch();
-    React.useEffect(() => {
-        dispatch({type: CLEAR_CART});
-        clearCart();
-    }, [dispatch])
-
+export default function Success({products}) {
     return (
         <Box sx={{marginY: "20px", textAlign: "center"}}>
             <Typography  variant="h5" gutterBottom>

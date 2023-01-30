@@ -1,5 +1,9 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { CLEAR_CART } from '../utils/actions';
+import { clearCart } from '../utils/helpers';
+
 import Box from "@mui/material/Box"
 import Paper from "@mui/material/Paper";
 import Stepper from "@mui/material/Stepper";
@@ -14,7 +18,10 @@ import Success from '../components/Success';
 
 const steps = ["Shipping address", "Payment details", "Review your order"];
 
-export default function Checkout() {
+export default function Checkout({ products }) {
+    const dispatch = useDispatch();
+    const cart = useSelector(state => state.cart);
+
     const [activeStep, setActiveStep] = React.useState(0);
     const [address, setAddress] = React.useState();
     const [name, setName] = React.useState();
@@ -61,12 +68,23 @@ export default function Checkout() {
         })
     };
 
+    const successHandle = () => {
+        cart.forEach(item => {
+            const updatedProduct = products.find(product => product.id === item.id);
+            updatedProduct.stock = updatedProduct.stock - item.purchaseQuantity;
+        });
+        dispatch({ type: CLEAR_CART });
+        clearCart();
+    }
+
     const handleForm = (event) => {
         event.preventDefault();
         if (activeStep === 0) {
             addressFormInfo(event)
         } else if (activeStep === 1) {
             paymentFormInfo(event)
+        } else if (activeStep === 2) {
+            successHandle()
         }
         setActiveStep(activeStep + 1);
     };
@@ -105,17 +123,17 @@ export default function Checkout() {
                                 </Button>
                             )}
                             {activeStep === 3 ?
-                                <Link to="/" style={{color: "black", textDecoration: "none" }}>
-                                    <Button variant="contained" color="secondary" sx={{margin: "20px"}}>
-                                        Back To Home Page
-                                    </Button>
-                                </Link> :
+
+                                <Button variant="contained" color="secondary" sx={{ margin: "20px" }}>
+                                    <Link to="/" style={{ color: "white", textDecoration: "none" }}>Back To Home Page</Link>
+                                </Button>
+                                :
                                 <Button
                                     variant="contained"
                                     color="secondary"
                                     // onClick={handleNext}
                                     type="submit"
-                                    sx={{margin: "20px"}}
+                                    sx={{ margin: "20px" }}
                                 >
                                     {activeStep === steps.length - 1 ? "Place order" : "Next"}
                                 </Button>

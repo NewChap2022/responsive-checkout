@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 
 import Cart from '../components/Cart';
 
@@ -39,12 +40,12 @@ export default function Detail({ products }) {
         };
     }
     return (
-        <div>
-
+        <div style={{textAlign: "center"}}>
             <Grid container
                 sx={{
                     boxShadow: "0px 2px 4px -1px",
                     marginY: "20px",
+                    textAlign: "start"
                 }}>
                 <Grid item xs={12} sm={6} sx={{ textAlign: "center" }}>
                     <img src={item.image} style={{ width: "300px", objectFit: "contain" }} alt="product" />
@@ -83,6 +84,9 @@ export default function Detail({ products }) {
                     </div>
                 </Grid>
             </Grid>
+            <Button variant="contained" color="secondary">
+                <Link to="/" style={{ textDecoration: "none", color: "white"}}>Back to Home Page</Link>
+            </Button>
             <Cart products={products} />
         </div>
     )
