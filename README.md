@@ -11,6 +11,9 @@ run `npm install`
 ### Step 3
 run `npm start`
 
+### Step 4
+open "http://localhost:3000/" in browser
+
 ## Additional feature
 1. View products by category
 2. Products list page
