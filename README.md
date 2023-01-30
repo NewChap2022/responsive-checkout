@@ -18,6 +18,7 @@ run `npm start`
 4. Mock checkout page
 4. Show the number of products added to the cart
 5. Use the redux to store the cart, the cart open state and current category information.
+6. Stock management
 
 ## Approach to the product
 1. I choose to build a relevant full site for this project which means including homepage and product detail page. Client can add product to cart if he/she likes the product.
@@ -34,4 +35,5 @@ run `npm start`
 4. Trim lay out and UI for the app.
 5. Allow user to select multiple category.
 6. Add e2e tests for the app.
+7. Add pagination
 

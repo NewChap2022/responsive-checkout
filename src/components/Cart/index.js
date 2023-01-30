@@ -57,7 +57,7 @@ export default function Cart({ products }) {
         )
     }
     return (
-        <div className="cart">
+        <div className="cart" style={{textAlign: "start"}}>
             <div className="close" onClick={toggleCart}>
                 ×
             </div>
