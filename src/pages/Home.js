@@ -21,9 +21,10 @@ export default function Home({ products }) {
                 direction="row"
                 justifyContent="flex-start"
                 alignItems="stretch"
+                spacing={2}
             >
                 {filterProducts().map((product) => (
-                    <Grid xs={12} sm={6} md={4} lg={2} item sx={{marginY: "5px"}} key={product.id}>
+                    <Grid xs={12} sm={6} md={4} lg={2} item key={product.id}>
                         <ProductCard product={product} />
                     </Grid>
                 ))}
