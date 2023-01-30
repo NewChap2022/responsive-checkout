@@ -17,7 +17,11 @@ export default function ProductCard({ product }) {
     const addToCart = () => {
         const itemInCart = cart.find((cartItem) => cartItem.id === product.id);
         if (itemInCart) {
-            const purchaseQuantity = parseInt(itemInCart.purchaseQuantity) + 1
+            if (itemInCart.purchaseQuantity === product.stock) {               
+                return;
+            }
+
+            const purchaseQuantity = parseInt(itemInCart.purchaseQuantity) + 1;
             dispatch({
                 type: UPDATE_CART_QUANTITY,
                 id: product.id,

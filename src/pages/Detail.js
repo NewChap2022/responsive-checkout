@@ -24,6 +24,7 @@ export default function Detail({ products }) {
 
     const addToCart = () => {
         const itemInCart = cart.find((cartItem) => cartItem.id === item.id);
+
         if (itemInCart) {
             dispatch({
                 type: UPDATE_CART_QUANTITY,
@@ -40,7 +41,7 @@ export default function Detail({ products }) {
         };
     }
     return (
-        <div style={{textAlign: "center"}}>
+        <div style={{ textAlign: "center" }}>
             <Grid container
                 sx={{
                     boxShadow: "0px 2px 4px -1px",
@@ -67,6 +68,7 @@ export default function Detail({ products }) {
                                 <input
                                     type="number"
                                     defaultValue={1}
+                                    max={item.stock}
                                     style={{ width: "50px", height: "25px" }}
                                     onChange={onChange}
                                 />
@@ -85,7 +87,7 @@ export default function Detail({ products }) {
                 </Grid>
             </Grid>
             <Button variant="contained" color="secondary">
-                <Link to="/" style={{ textDecoration: "none", color: "white"}}>Back to Home Page</Link>
+                <Link to="/" style={{ textDecoration: "none", color: "white" }}>Back to Home Page</Link>
             </Button>
             <Cart products={products} />
         </div>

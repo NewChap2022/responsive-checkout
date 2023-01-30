@@ -25,6 +25,7 @@ run `npm start`
 3. I had difficulty in updating the local storage. I attempted to save what store in redux to update the local storage but failed. In the end, I used the similar approach I used in redux to update local storage.
 4. I built product detail and checkout page after the main function is completed. I use MUI checkout template and made modification. The review page can see what user has put into the form instead of fake data.
 5. My understanding towards e2e tests is limited. I need more time to learn it. Therefore, I can't implement it fully during this development.
+6. Add stock into the data.
 
 ## Improvements in future
 1. Add login/sign up function.
